@@ -1,5 +1,19 @@
 # About The Bank App
 
-The Bank App is built with HTML, CSS AND JS. it is a app that's made to mimick the real bank app where a user can log in and out. once the user puts in the correct username and pin, his account details will be rendered. The details will include the user's current balance, the total amount of money in and money out, the recent activities done by the user on the app, and the total interest the user has relative to the user's current balance. the user can also transfer money to another account, request a loan, close account and log out. Also all the users dates and currencies are displayed based on the locale of each user using the internalization API. Finally, Anytime a user logs in, a 5 minute timeout is set. Once the 5 mins. is reached, the user will be logged out and will need to log in again.
+The Bank App is crafted using HTML, CSS, and JavaScript. It functions as a simulated banking application, allowing users to seamlessly log in and out. Upon entering the correct username and PIN, the application renders the user's account details. These details encompass the current balance, total money in and out, recent activities conducted within the app, and the overall interest accrued relative to the user's current balance.
+
+Users can engage in various financial transactions, such as transferring money to another account, requesting a loan, closing their account, and logging out. Additionally, all dates and currencies are displayed in accordance with the locale of each user, facilitated by the Internationalization API.
+
+To enhance security, a 5-minute timeout is implemented every time a user logs in. Once this duration elapses, the user is automatically logged out and must log in again to access their account.
+
+The Bank App supports two user accounts, each with a unique username and PIN. Here are the details for the two accounts:
+
+Account 1:
+Username: ak
+PIN: 8787
+
+Account 2:
+Username: is
+PIN: 9898
 
 Happy Checking!!

@@ -78,6 +78,8 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 const alert = document.querySelector('.alert');
+const LogOutButton = document.querySelector('.Logout_button');
+const navContainer = document.querySelector('.nav_container');
 // const logoutBtn = document.querySelector('.logout-btn');
 
 /////////////////////////////////////////////////
@@ -263,6 +265,9 @@ btnLogin.addEventListener('click', e => {
     }!`;
     containerApp.style.opacity = 1;
 
+    LogOutButton.style.display = 'block';
+    navContainer.style.display = 'none';
+
     // implementing the log out button funtionality
     // logoutBtn.classList.remove('hide');
     // logoutBtn.addEventListener('click', () => {
@@ -318,6 +323,17 @@ btnLogin.addEventListener('click', e => {
       options
     ).format(now); //will format the date as it is in the US
   }
+});
+
+LogOutButton.addEventListener('click', e => {
+  currentUser = '';
+  labelWelcome.textContent = `Log in to get started`;
+  containerApp.style.opacity = 0;
+
+  LogOutButton.style.display = 'none';
+  navContainer.style.display = 'block';
+
+  displayAlert(`Logout successful`, 'sucess');
 });
 
 btnTransfer.addEventListener('click', e => {

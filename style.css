@@ -48,33 +48,35 @@ body {
   background: #f8d7da;
 }
 
-/* .logout-btn {
-  margin-right: 30px;
-  border: 2px solid red;
-  background-color: transparent;
-  padding: 0.2rem 2rem;
-  width: 10rem;
-  text-align: center;
-  font-weight: 700;
-  color: #000;
-  border-radius: 10rem;
-  transition: 0.3s all linear;
-}
-
-.logout-btn:hover {
-  background-color: red;
-  color: #fff;
-}
-
-.logout-btn.hide {
-  display: none;
-} */
-
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+}
+
+.Logout_button {
+  display: flex;
+  align-items: center;
+
+  display: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.Logout_button button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  text-transform: capitalize;
+  transition: 0.3s all ease-in-out;
+}
+
+.Logout_button button:hover {
+  background-color: white;
+  color: red;
 }
 
 .welcome {
@@ -133,24 +135,43 @@ nav {
 /* MAIN */
 .app {
   position: relative;
-  max-width: 100rem;
-  margin: 4rem auto;
+  max-width: 200rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  /* margin: 4rem auto;
   display: grid;
   grid-template-columns: 4fr 3fr;
   grid-template-rows: auto repeat(3, 15rem) auto;
-  gap: 2rem;
+  gap: 2rem; */
 
   /* NOTE This creates the fade in/out anumation */
   opacity: 0;
   transition: all 1s;
 }
 
+.movement_operations {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  /* justify-content: space-between; */
+}
+
 .balance {
-  grid-column: 1 / span 2;
+  /* grid-column: 1 / span 2;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  margin-bottom: 2rem; */
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
   margin-bottom: 2rem;
+  margin-top: 2rem;
+  padding: 0 2rem;
+  align-items: center;
 }
 
 .balance__label {
@@ -171,10 +192,12 @@ nav {
 
 /* MOVEMENTS */
 .movements {
-  grid-row: 2 / span 3;
   background-color: #fff;
   border-radius: 1rem;
-  overflow: scroll;
+  overflow-y: scroll;
+  width: 100%;
+
+  max-height: 600px;
 }
 
 .movements__row {
@@ -215,8 +238,15 @@ nav {
 }
 
 /* SUMMARY */
+.summary_timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  margin-bottom: 1.5rem;
+}
+
 .summary {
-  grid-row: 5 / 6;
   display: flex;
   align-items: baseline;
   padding: 0 0.3rem;
@@ -228,6 +258,11 @@ nav {
   font-weight: 500;
   text-transform: uppercase;
   margin-right: 0.8rem;
+}
+
+.summary div {
+  display: flex;
+  align-items: center;
 }
 
 .summary__value {
@@ -254,6 +289,11 @@ nav {
 }
 
 /* OPERATIONS */
+.operations {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
 .operation {
   border-radius: 1rem;
   padding: 3rem 4rem;
@@ -336,9 +376,76 @@ h2 {
   padding: 0 0.3rem;
   margin-top: 1.9rem;
   text-align: right;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
 }
 
 .timer {
   font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .welcome {
+    order: 2;
+  }
+
+  .login {
+    order: 3;
+  }
+
+  .app {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .balance {
+    flex-direction: column;
+    padding: 0 1rem;
+    align-items: flex-start;
+    margin-top: 30px;
+    gap: 1rem;
+  }
+
+  .balance div {
+    text-align: left;
+  }
+
+  .movement_operations {
+    flex-direction: column;
+  }
+
+  .operations {
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .summary_timer {
+    flex-direction: column;
+  }
+
+  .summary {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .movements__type {
+    font-size: 1rem;
+    padding: 0.1rem 0.9rem;
+  }
+
+  .movements__row {
+    padding: 2.25rem 1.5rem;
+  }
 }
